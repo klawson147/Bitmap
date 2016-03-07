@@ -10,6 +10,7 @@ BMPHeader::BMPHeader()
 
 BMPHeader::~BMPHeader()
 {
+	cout << "Press any Key to Continue\n";
 	cin.get();
 }
 

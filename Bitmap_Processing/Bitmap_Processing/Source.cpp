@@ -1,12 +1,15 @@
 #include "Bitmap.h"
 #include <iostream>
 #include <fstream>
+#include <Windows.h>
 
 using namespace std;
 
 
 int main()
 {
+	int messageID = MessageBox(NULL, (LPCWSTR)L"Hello", (LPCWSTR)L"World", MB_OK);
+	cout << messageID << endl;
 	// Open BMP File
 	ifstream ifs("bmp3000.bmp", fstream::in | fstream::binary);
 	BMPHeader header;
