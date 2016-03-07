@@ -17,6 +17,9 @@ int main()
 	// Display Various Information
 	cout << header.toString();
 	
+	// Inverse Pixels
+	header.inversePixel();
+
 	// Write BMP File
 	header.writeBMP();
 

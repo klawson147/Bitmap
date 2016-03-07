@@ -195,9 +195,13 @@ void BMPHeader::writeBMP()
 	ofs.close();
 }
 
+
 void BMPHeader::inversePixel()
 {
-
+	for (int i = 0; i < (getWidth() * getHeight()); i++)
+	{
+		inversePixel(&ImageData[i]);
+	}
 }
 
 // Takes a Pointer to Struct RGBPixel and inverses the color
