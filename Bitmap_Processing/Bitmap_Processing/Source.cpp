@@ -7,19 +7,18 @@ using namespace std;
 
 int main()
 {
+	// Open BMP File
 	ifstream ifs("bmp3000.bmp", fstream::in | fstream::binary);
-
 	BMPHeader header;
 
+	// Pass File to be read
 	header.Fill(&ifs);
-	ifs.close();
 
+	// Display Various Information
 	cout << header.toString();
-	//header.COUTImageData();
-
+	
+	// Write BMP File
 	header.writeBMP();
-
-	cout << endl;
 
 	return 1;
 }
