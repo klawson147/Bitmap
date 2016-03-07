@@ -175,7 +175,7 @@ void BMPHeader::writeBMP()
 			ofs << (char)it->r;
 			it++;
 		}
-		// Write Padding if Neccisary
+		// Write padding if necessary
 
 		if ((getWidth() * 3) % 4 == 0)
 		{
