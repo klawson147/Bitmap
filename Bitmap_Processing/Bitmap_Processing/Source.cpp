@@ -43,7 +43,7 @@ int main()
 		header.inversePixel();
 
 		// Write BMP File
-		header.writeBMP();
+		header.writeBMP(filename);
 	}
 	
 	return 1;

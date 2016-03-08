@@ -4,6 +4,7 @@
 #include <vector>
 #include <sstream>
 #include <stdint.h>
+#include <string>
 
 struct RGBPixel
 {
@@ -36,7 +37,7 @@ public:
 	int getWidth();
 	int getBitsPerPixels();
 
-	void writeBMP();
+	void writeBMP(std::string);
 
 	void inversePixel();
 	void inversePixel(RGBPixel*);

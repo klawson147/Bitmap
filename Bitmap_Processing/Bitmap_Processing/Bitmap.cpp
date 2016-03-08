@@ -146,9 +146,11 @@ void BMPHeader::COUTImageData()
 }
 
 
-void BMPHeader::writeBMP()
+void BMPHeader::writeBMP(string filename)
 {
-	ofstream ofs("bmpOut.bmp", ofstream::out | ofstream::binary);
+	// Get Output File Name
+	filename = filename.substr(0, (filename.find_last_of(".")));
+	ofstream ofs((filename + "_output.bmp"), ofstream::out | ofstream::binary);
 
 	// Write Header
 	for (int h = 0; h < bitmapheader; h++)
@@ -177,7 +179,6 @@ void BMPHeader::writeBMP()
 			it++;
 		}
 		// Write padding if necessary
-
 		if ((getWidth() * 3) % 4 == 0)
 		{
 			padding = 0;
@@ -196,7 +197,7 @@ void BMPHeader::writeBMP()
 	ofs.close();
 }
 
-
+// Default Constructor for Inversing the pixels in ImageData[];
 void BMPHeader::inversePixel()
 {
 	for (int i = 0; i < (getWidth() * getHeight()); i++)
