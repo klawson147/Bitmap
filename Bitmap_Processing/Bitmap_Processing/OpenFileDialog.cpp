@@ -4,7 +4,7 @@ OpenFileDialog::OpenFileDialog(void)
 {
 	this->DefaultExtension = 0;
 	this->FileName = new TCHAR[MAX_PATH];
-	this->Filter = 0;
+	this->Filter = "BMP Files (*.bmp)";
 	this->FilterIndex = 0;
 	this->Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
 	this->InitialDir = 0;
@@ -16,7 +16,7 @@ bool OpenFileDialog::ShowDialog()
 {
 	OPENFILENAME ofn;
 
-	ZeroMemory(&ofn, sizeof(ofn));
+	SecureZeroMemory(&ofn, sizeof(ofn));
 
 	ofn.lStructSize = sizeof(ofn);
 	ofn.hwndOwner = this->Owner;
