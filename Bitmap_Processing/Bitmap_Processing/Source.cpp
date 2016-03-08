@@ -24,6 +24,11 @@ int main()
 		cout << filename << " can't be opened\n";
 		
 	}
+	// Ensure File is of type .bmp
+	else if (!(filename.substr(filename.find_last_of(".") + 1) == "bmp"))
+	{
+		cout << filename << " is not a .bmp file\n";
+	}
 	else
 	{
 		BMPHeader header;
