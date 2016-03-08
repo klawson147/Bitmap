@@ -8,14 +8,14 @@ class OpenFileDialog
 {
 public:
 	OpenFileDialog(void);
-	TCHAR*DefaultExtension;
-	TCHAR*FileName; // Current Visual Studio Settings Have TCHAR as a 1 Byte Character
+	TCHAR*DefaultExtension = "bmp";
+	TCHAR*FileName; // Defined as a 1 Byte Character
 	TCHAR*Filter;
 	int FilterIndex;
 	int Flags;
 	TCHAR*InitialDir;
 	HWND Owner;
-	TCHAR*Title;
+	TCHAR*Title = "Choose a .bmp File";
 
 	bool ShowDialog();
 };
